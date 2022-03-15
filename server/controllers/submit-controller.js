@@ -33,8 +33,9 @@ module.exports = {
 
     // Adds to DB
     let parsedScore = verification.score || -1
+    let doc;
     try {
-      await strapi.query('plugin::ezforms.submission').create({
+      doc = await strapi.query('plugin::ezforms.submission').create({
           data: {
             score: parsedScore,
             data: ctx.request.body.formData,
@@ -46,7 +47,7 @@ module.exports = {
       return ctx.internalServerError('A Whoopsie Happened')
     }
 
-    return ctx.body = ctx.request.body.formData;
+    return ctx.body = {created: doc};
   },
 }
 ;
