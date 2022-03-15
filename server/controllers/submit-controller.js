@@ -41,7 +41,7 @@ module.exports = {
             score: parsedScore,
             data: {
               ...ctx.request.body.formData,
-              uid: v4()
+              uid: uuid()
             }
           }
         }
