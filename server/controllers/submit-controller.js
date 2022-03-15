@@ -1,4 +1,5 @@
 'use strict';
+const { v4: uuid } = require('uuid');
 
 module.exports = {
   async index(ctx) {
@@ -38,7 +39,10 @@ module.exports = {
       doc = await strapi.query('plugin::ezforms.submission').create({
           data: {
             score: parsedScore,
-            data: ctx.request.body.formData,
+            data: {
+              ...ctx.request.body.formData,
+              uid: v4()
+            }
           }
         }
       );
