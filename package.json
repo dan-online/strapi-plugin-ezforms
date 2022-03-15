@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-ezforms",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "This is the description of the plugin.",
   "strapi": {
     "name": "ezforms",
@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "twilio": "^3.71.2"
+    "twilio": "^3.71.2",
+    "uuid": "^8.3.2"
   },
   "author": {
     "name": "Excl Networks Inc."
